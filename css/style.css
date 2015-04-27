@@ -1,0 +1,83 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, html {
+  background: url("../img/hexabump.png");
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+button {
+  display: inline-block;
+  margin: 20px;
+  background: none;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  color: #fff;
+}
+button:hover {
+  color: darkorange;
+}
+
+.image-holder {
+  border: 5px solid #fff;
+  width: 510px;
+  height: 310px;
+  margin: 0 auto;
+  border-radius: 4px;
+  position: relative;
+}
+.image-holder p {
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+
+.main-gallery li {
+  position: absolute;
+  list-style: none;
+  opacity: 0;
+  transition: 0.5s all ease-in-out;
+  -webkit-transition: 0.5s all ease-in-out;
+}
+.main-gallery li img {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+.main-gallery .selected {
+  opacity: 1;
+}
+
+.thumbs-gallery {
+  margin-top: 20px;
+}
+.thumbs-gallery li {
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.thumbs-gallery li img {
+  opacity: 0.5;
+  width: 100px;
+  height: 100px;
+}
+.thumbs-gallery li:hover img, .thumbs-gallery li.selected img {
+  opacity: 1;
+}
