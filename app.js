@@ -1,4 +1,4 @@
-$(document).ready(function(){
+//$(document).ready(function(){
   
   var ct = 0;
   var imgArr = $('.main-gallery li').toArray();
@@ -33,6 +33,8 @@ $(document).ready(function(){
   }
 
   var $thumbsList = $('.thumbs-gallery li');
+  $('.thumbs-gallery li:first-child').addClass('selected');
+  var thumbsArray = $thumbsList.toArray();
 
   $thumbsList.on('click', function(e){
     e.preventDefault();
@@ -41,14 +43,12 @@ $(document).ready(function(){
     $(this).addClass('selected').siblings().removeClass('selected');
   });
 
-  if(ct == $thumbsList) {
-    alert(ct);
-  }
 
   //$('.thumbs-gallery li').addClass('selected').siblings().removeClass('selected');
   function updateUI(ct) {
     $(imgArr[ct]).addClass('selected').siblings().removeClass('selected');
+    $(thumbsArray[ct]).addClass('selected').siblings().removeClass('selected');
   }
 
 
-});
+//});
