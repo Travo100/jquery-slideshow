@@ -2,7 +2,7 @@
   
   var ct = 0;
   var imgArr = $('.main-gallery li').toArray();
-
+  var timer;
   //forward button
   $('#forward').on('click', function(e){
     e.preventDefault();
@@ -11,6 +11,7 @@
       ct = 0;
     }
     updateUI(ct); 
+    clearInterval(timer);
   });
 
   //backwards button
@@ -21,6 +22,7 @@
       ct = imgArr.length - 1;
     }
     updateUI(ct);
+    clearInterval(timer);
   });
 
   
@@ -56,17 +58,20 @@
     $(thumbsArray[ct]).addClass('selected').siblings().removeClass('selected');
   }
 
-  function setTimer(time){
-    setInterval(function(){
+  
+  $('#play-button').on('click',function(e){
+    e.preventDefault();
+    timer = setInterval(function(){
     ct++;
     if (ct%imgArr.length == 0){
       ct = 0;
     }
       updateUI(ct);
-    }, time)
-  }
-  $('#play-button').on('click',function(){
-    setTimer(1000);
+    }, 1000)
+  });
+  $('#pause-button').on('click', function(e){
+    e.preventDefault();
+    clearInterval(timer);
   });
 
 //});
