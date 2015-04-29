@@ -1,4 +1,4 @@
-//$(document).ready(function(){
+$(document).ready(function(){
   
   var ct = 0;
   var imgArr = $('.main-gallery li').toArray();
@@ -74,4 +74,4 @@
     clearInterval(timer);
   });
 
-//});
+});
