@@ -8,7 +8,9 @@ html {
 }
 
 body,html {
-  background: url('../img/hexabump.png');
+  background-image: url('../img/hexabump.png');
+  background-color: black;
+  height: 100%;
 }
 
 .container {
@@ -88,3 +90,17 @@ ul {
   }
 }
 
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+  
+  body,html {
+    background-image: url('../img/hexabump_@2X.png');
+    background-size: 19px 33px;
+  }
+
+}

@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  
   var ct = 0;
   var imgArr = $('.main-gallery li').toArray();
   var timer;
@@ -51,6 +50,7 @@ $(document).ready(function(){
     ct = $(this).index();
     updateUI(ct);
     $(this).addClass('selected').siblings().removeClass('selected');
+    clearInterval(timer);
   });
 
   function updateUI(ct) {
@@ -73,5 +73,4 @@ $(document).ready(function(){
     e.preventDefault();
     clearInterval(timer);
   });
-
 });
